@@ -1,27 +1,42 @@
-package testing;
+package model;
 
-import static org.junit.Assert.assertEquals;
-
-import org.junit.Test;
-
-import model.AccountDetails;
-
-public class TestAccountDetails {
+public class AccountDetails{
+    
+    private String accountType;
+	private double withdrawOrDepositAmount;
+	private double availableBalance;
+	private int pin;
 	
-	@Test
-	public void testSetInputsMethod() {
-		AccountDetails accdetails = new AccountDetails("saving",2000,5000,5566);
-		assertEquals("saving",accdetails.getAccountType());
-		assertEquals(2000,accdetails.getWithdrawOrDepositAmount(),0);
-		assertEquals(5000,accdetails.getAvailableBalance(),0);
-		assertEquals(5566,accdetails.getPin());
-		try {
-			accdetails.setAccountType(null);
-			accdetails.setWithdrawOrDepositAmount(-500);
-			accdetails.setAvailableBalance(-500);
-			accdetails.setPin(0);
-		}catch(Exception e){
-			e.printStackTrace();
-		}
+	
+	public AccountDetails(String accountType, double withdrawOrDepositAmount, double availableBalance, int pin) {
+		super();
+		this.accountType = accountType;
+		this.withdrawOrDepositAmount = withdrawOrDepositAmount;
+		this.availableBalance = availableBalance;
+		this.pin = pin;
+	}
+	public String getAccountType() {
+		return accountType;
+	}
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+	}
+	public double getWithdrawOrDepositAmount() {
+		return withdrawOrDepositAmount;
+	}
+	public void setWithdrawOrDepositAmount(double withdrawOrDepositAmount) {
+		this.withdrawOrDepositAmount = withdrawOrDepositAmount;
+	}
+	public double getAvailableBalance() {
+		return availableBalance;
+	}
+	public void setAvailableBalance(double availableBalance) {
+		this.availableBalance = availableBalance;
+	}
+	public int getPin() {
+		return pin;
+	}
+	public void setPin(int pin) {
+		this.pin = pin;
 	}
 }
